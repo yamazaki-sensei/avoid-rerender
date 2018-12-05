@@ -73,3 +73,4 @@ Pods
 Carthage/
 xcshareddata/
 xcschememanagement.plist
+.idea/
