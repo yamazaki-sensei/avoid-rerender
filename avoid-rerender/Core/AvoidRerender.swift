@@ -6,16 +6,16 @@
 import UIKit
 
 protocol AvoidRerender: class {
-    associatedtype T: Equatable
+    associatedtype TargetState: Equatable
 
-    var state: T { get set }
+    var state: TargetState { get set }
 
-    func updateState(next: T)
+    func updateState(next: TargetState)
     func customAction()
 }
 
 extension AvoidRerender where Self: UIViewController {
-    func updateState(newState: T) {
+    func updateState(newState: TargetState) {
         guard newState != self.state else { return }
 
         self.state = newState
@@ -27,7 +27,7 @@ extension AvoidRerender where Self: UIViewController {
 }
 
 extension AvoidRerender where Self: UIView {
-    func updateState(newState: T) {
+    func updateState(newState: TargetState) {
         guard newState != self.state else { return }
 
         self.state = newState

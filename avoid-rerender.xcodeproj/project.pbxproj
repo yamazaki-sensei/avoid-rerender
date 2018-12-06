@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30DEF1A7C3C443841802ED90 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEF831352C6C09DD6CD41C /* AppState.swift */; };
+		30DEF45A791D5FB49E2C82A8 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEF0817D52F89010E45DA8 /* AppReducer.swift */; };
+		30DEF78332C97D2B10BD8089 /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEF58AB075B213106B5EF7 /* CounterState.swift */; };
+		30DEF95BB661164844E1CCB9 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEFD70FA7F9F0CEAAE8CD3 /* CounterReducer.swift */; };
 		30DEF9B2CF9758A2030FC8F5 /* AvoidRerender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEFD919A0174451A68A763 /* AvoidRerender.swift */; };
+		30DEF9FFA17B6ABB88BBA32D /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEF7EBFB5F4348C783BED9 /* CounterAction.swift */; };
 		426DE2F021B83DD5001A41BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DE2EF21B83DD5001A41BF /* AppDelegate.swift */; };
 		426DE2F221B83DD5001A41BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DE2F121B83DD5001A41BF /* ViewController.swift */; };
 		426DE2F521B83DD5001A41BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426DE2F321B83DD5001A41BF /* Main.storyboard */; };
@@ -37,6 +42,11 @@
 
 /* Begin PBXFileReference section */
 		23476A6DCAAAF470BECF224C /* Pods-avoid-rerender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-avoid-rerender.debug.xcconfig"; path = "Pods/Target Support Files/Pods-avoid-rerender/Pods-avoid-rerender.debug.xcconfig"; sourceTree = "<group>"; };
+		30DEF0817D52F89010E45DA8 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		30DEF58AB075B213106B5EF7 /* CounterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
+		30DEF7EBFB5F4348C783BED9 /* CounterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
+		30DEF831352C6C09DD6CD41C /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		30DEFD70FA7F9F0CEAAE8CD3 /* CounterReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
 		30DEFD919A0174451A68A763 /* AvoidRerender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvoidRerender.swift; sourceTree = "<group>"; };
 		40E7588FC44AAA693467960B /* Pods-avoid-rerender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-avoid-rerender.release.xcconfig"; path = "Pods/Target Support Files/Pods-avoid-rerender/Pods-avoid-rerender.release.xcconfig"; sourceTree = "<group>"; };
 		426DE2EC21B83DD5001A41BF /* avoid-rerender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avoid-rerender.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,12 +99,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		30DEF79EDE61869BE0952DA1 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				30DEF831352C6C09DD6CD41C /* AppState.swift */,
+				30DEF58AB075B213106B5EF7 /* CounterState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		30DEF9B882E533283B98222B /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				30DEF7EBFB5F4348C783BED9 /* CounterAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		30DEFD512C207518D76F5CC3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				30DEFD919A0174451A68A763 /* AvoidRerender.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		30DEFF78FC655DC930007F5C /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				30DEF0817D52F89010E45DA8 /* AppReducer.swift */,
+				30DEFD70FA7F9F0CEAAE8CD3 /* CounterReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 		426DE2E321B83DD5001A41BF = {
@@ -129,6 +165,9 @@
 				426DE2F821B83DD7001A41BF /* LaunchScreen.storyboard */,
 				426DE2FB21B83DD7001A41BF /* Info.plist */,
 				30DEFD512C207518D76F5CC3 /* Core */,
+				30DEFF78FC655DC930007F5C /* Reducer */,
+				30DEF9B882E533283B98222B /* Action */,
+				30DEF79EDE61869BE0952DA1 /* State */,
 			);
 			path = "avoid-rerender";
 			sourceTree = "<group>";
@@ -343,6 +382,11 @@
 				426DE2F221B83DD5001A41BF /* ViewController.swift in Sources */,
 				426DE2F021B83DD5001A41BF /* AppDelegate.swift in Sources */,
 				30DEF9B2CF9758A2030FC8F5 /* AvoidRerender.swift in Sources */,
+				30DEF1A7C3C443841802ED90 /* AppState.swift in Sources */,
+				30DEF78332C97D2B10BD8089 /* CounterState.swift in Sources */,
+				30DEF45A791D5FB49E2C82A8 /* AppReducer.swift in Sources */,
+				30DEF9FFA17B6ABB88BBA32D /* CounterAction.swift in Sources */,
+				30DEF95BB661164844E1CCB9 /* CounterReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
