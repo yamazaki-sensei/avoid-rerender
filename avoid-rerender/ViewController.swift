@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import ReSwift
 
 class ViewController: UIViewController {
 
+    var state: TargetState?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        mainStore.subscribe(self){ (subscription) in
+            subscription.select { state in state.counterState }
+        }
     }
-
-
 }
 
+extension ViewController: StoreSubscriber, AvoidRerender {
+    typealias TargetState = CounterState
+    typealias StoreSubscriberStateType = CounterState
+
+    func newState(state: CounterState) {
+        update(with: state)
+    }
+
+    func customAction(state: CounterState?) {
+
+    }
+}

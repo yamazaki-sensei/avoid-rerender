@@ -5,7 +5,7 @@
 
 import ReSwift
 
-func appResucer(action: Action, state: AppState?) -> AppState {
+func appReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
 
     switch action {
