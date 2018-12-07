@@ -3,8 +3,8 @@
 // Copyright (c) 2018 yamazakisensei. All rights reserved.
 //
 
-import Foundation
+import ReSwift
 
-enum CounterAction {
+enum CounterAction: Action {
     case up, down, setValue(value: Int)
 }

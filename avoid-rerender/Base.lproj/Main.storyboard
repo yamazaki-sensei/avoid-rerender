@@ -31,11 +31,17 @@
                                 <rect key="frame" x="120" y="240" width="30" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="didTapPlusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DiO-Yu-Hw6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuI-QZ-Vbt">
                                 <rect key="frame" x="225" y="240" width="30" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="didTapMinusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMW-3C-D2J"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eB4-b0-c4J">
                                 <rect key="frame" x="30" y="333" width="315" height="30"/>
@@ -50,6 +56,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="didTapSetValueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uL8-zD-Dsm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +79,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="valueLabel" destination="h16-tK-V5u" id="TMH-aN-duh"/>
+                        <outlet property="valueTextField" destination="eB4-b0-c4J" id="TLi-r6-MJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

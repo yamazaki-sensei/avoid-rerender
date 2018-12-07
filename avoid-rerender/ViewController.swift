@@ -13,12 +13,28 @@ class ViewController: UIViewController {
 
     var state: TargetState?
 
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var valueTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mainStore.subscribe(self){ (subscription) in
-            subscription.select { state in state.counterState }
+            subscription.select { state in state.counterState } // 今回は敢えてskipRepeats()を設定しない
         }
+    }
+    
+    @IBAction func didTapPlusButton(_ sender: Any) {
+        mainStore.dispatch(CounterAction.up)
+    }
+
+    @IBAction func didTapMinusButton(_ sender: Any) {
+        mainStore.dispatch(CounterAction.down)
+    }
+
+    @IBAction func didTapSetValueButton(_ sender: Any) {
+        guard let text = valueTextField.text, let v = Int(text) else { return }
+        mainStore.dispatch(CounterAction.setValue(value: v))
     }
 }
 
@@ -31,6 +47,11 @@ extension ViewController: StoreSubscriber, AvoidRerender {
     }
 
     func customAction(state: CounterState?) {
-
+        print("customAction called")
+        guard let state = state else {
+            valueLabel.text = ""
+            return
+        }
+        valueLabel.text = "\(state.count)"
     }
 }
