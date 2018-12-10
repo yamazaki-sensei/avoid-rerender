@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         mainStore.subscribe(self){ (subscription) in
-            subscription.select { state in state.counterState } // 今回は敢えてskipRepeats()を設定しない
+            subscription.select { state in state.counterState }.skipRepeats()
         }
     }
     
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: StoreSubscriber, AvoidRerender {
+extension ViewController: StoreSubscriber {
     typealias TargetState = CounterState
     typealias StoreSubscriberStateType = CounterState
 
@@ -46,7 +46,7 @@ extension ViewController: StoreSubscriber, AvoidRerender {
         update(with: state)
     }
 
-    func customAction(state: CounterState?) {
+    func update(with state: CounterState?) {
         print("customAction called")
         guard let state = state else {
             valueLabel.text = ""
